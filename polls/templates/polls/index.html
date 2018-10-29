@@ -1,0 +1,35 @@
+<head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+{% if data_input %}
+    <div class="container">
+    <form><h3>{{ contents }}</h3>
+        <div class="container text-center">
+            {% for data in data_input %}
+        <input type="checkbox" name="tokens" value={{ data }}>{{ data }}&nbsp&nbsp&nbsp
+    {% endfor %}
+            <br><br>
+        <input type="button" onclick="clicked()" value="Submit">
+        </div>
+    </form>
+    </div>
+{% else %}
+    <p>No data are available.</p>
+{% endif %}
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    function clicked(){
+      var a=[]
+      $('input:checkbox:checked').each(function() {
+        a.push($(this).val());
+        }
+	  )
+
+	  location.href = "/polls/tokens/{{ inc_count }}/"+a;
+    }
+
+</script>
+
