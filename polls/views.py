@@ -5,7 +5,7 @@ import get_tokens
 
 import os
 
-os.chdir("C:\\Users\\Ranjith.Reddy\\PycharmProjects\\Django  Projects\\data_analysis")
+os.chdir("C:\\Users\\Ranjith.Reddy\\PycharmProjects\\Django Projects\\data_analysis")
 wb = openpyxl.load_workbook("test.xlsx")
 ws = wb.active
 ws2=wb.create_sheet('count')
